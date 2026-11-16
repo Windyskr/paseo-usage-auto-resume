@@ -6,7 +6,7 @@
 
 Usage Auto Resume detects short provider limit notices and explicit limit error codes at the end of a turn. Claude can finish a turn normally while leaving a limit notice, so detection also checks the closing assistant message. Context overflow, ordinary errors and API billing failures are excluded.
 
-Plugin-owned timeline rows, such as turn-speed statistics, are ignored when finding that closing message for limit and overload detection. They can follow a notice or appear between chunks of the same message without hiding it. Later provider activity still determines whether the notice is the closing output.
+Plugin-owned timeline rows are ignored when finding that closing message for limit and overload detection. They can follow a notice or appear between chunks of the same message without hiding it. Later provider activity still determines whether the notice is the closing output.
 
 At the end of a turn that was not canceled, the plugin reads the agent's latest 20 timeline items and checks those after the latest user message; the timeline Paseo 0.11 and 0.12 sent with a turn's end is not used. When they cannot be read, the failure is logged and only the error the turn failed with is checked.
 
